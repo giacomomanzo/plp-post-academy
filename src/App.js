@@ -41,10 +41,19 @@ function App() {
     setValue("");
   }
 
+  const setFilteredProducts = (e) => {
+    const searchString = e.target.value.toLowerCase();
+    const filteredProducts = products.filter((item) => {
+      return item.name.toLowerCase().includes(searchString);
+    });
+    setProducts(filteredProducts);
+    setValue(searchString);
+  }
+
   return (
     <div className="App">
       <Grid container justifyContent="space-between" alignItems="center" className="header">
-        <Box component="img" src="https://via.placeholder.com/150x80" alt="" className="box-logo"></Box>
+        <Box component="img" src="https://via.placeholder.com/150x60" alt="" className="box-logo"></Box>
         <ButtonGroup size="small">
           <Button sx={{height: 50}}>IN STOCK</Button>
           <Button sx={{height: 50}}>OUT OF STOCK</Button>
@@ -55,29 +64,22 @@ function App() {
             placeholder="search"
             defaultValue={initialValue}
             value={value}
-            onChange={(e) => {
-              const searchString = e.target.value.toLowerCase();
-              const filteredProducts = products.filter((item) => {
-                return item.name.toLowerCase().includes(searchString);
-              });
-              setProducts(filteredProducts);
-              setValue(searchString);
-            }}
+            onChange={setFilteredProducts}
           >
-            <Button variant="contained" onClick={setInitialProducts}>
+          </TextField>
+          <Button sx={{height: 53}} variant="contained" onClick={setInitialProducts}>
               RESET
             </Button>
-          </TextField>
         </div>
       </Grid>
-      <Grid container columnGap={2} columns={4} gridTemplateRows={2} rowGap={2} style={{height: 110+"%"}}>
+      <Grid container className="card-container" justifyContent="flex-start" gap={2}>
         {products.map((item, index) => (
-          <Card style={{ height: 500, width: 450 }} key={index}>
+          <Card className="card" key={index}>
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="350"
-                image="https://via.placeholder.com/350"
+                height="450"
+                image="https://via.placeholder.com/350x350"
                 alt=""
               />
               <CardContent component="div">

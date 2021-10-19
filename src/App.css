@@ -5,23 +5,39 @@
 }
 
 .App {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .header {
-  height: 9vh;
+  max-height: 9vh;
   border: 1px solid black;
 }
 
 .box-logo {
-  height: 100%;
   width: 10%;
   background-color: rgb(189, 189, 189);
 }
 
+
+.card-container {
+  width: calc(100% + 16px);
+  padding: 16px;
+  margin: 16px 0 0 16px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.card {
+  max-width: 25%;
+}
+
 .footer {
-  height: 8vh;
+  max-height: 10vh;
   width: 100%;
   background-color: rgb(189, 189, 189);
+  display: flex;
+  flex-basis: 100%;
 }
