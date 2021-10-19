@@ -12,7 +12,7 @@
 }
 
 .header {
-  max-height: 9vh;
+  max-height: 8vh;
   border: 1px solid black;
 }
 
@@ -25,9 +25,7 @@
 .card-container {
   width: calc(100% + 16px);
   padding: 16px;
-  margin: 16px 0 0 16px;
-  display: flex;
-  flex-flow: row wrap;
+  margin: 16px 0 16px 16px;
 }
 
 .card {
@@ -35,9 +33,7 @@
 }
 
 .footer {
-  max-height: 10vh;
+  max-height: 12vh;
   width: 100%;
   background-color: rgb(189, 189, 189);
-  display: flex;
-  flex-basis: 100%;
 }
