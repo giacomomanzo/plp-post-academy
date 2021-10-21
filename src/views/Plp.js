@@ -1,10 +1,12 @@
+import { Grid } from "@mui/material";
 import Header from "./components/Header";
 import CardList from "./components/CardList";
 import Footer from "./components/Footer";
 import { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
-function App() {
-  let initialValue;
+
+const Plp = () => {
+    let initialValue;
   const [value, setValue] = useState(initialValue);
   const [initialProducts, setInitialProducts] = useState([]);
   const [products, setProducts] = useState([]);
@@ -47,9 +49,8 @@ function App() {
     });
     setProducts(outOfStockProducts);
   };
-
-  return (
-    <Grid container direction="column" minHeight="100vh">
+    return (
+        <Grid container direction="column" minHeight="100vh">
       <Grid item xs={12}>
         <Header
           setInStockProducts={setInStockProducts}
@@ -69,7 +70,8 @@ function App() {
         <Footer />
       </Grid>
     </Grid>
-  );
+    )
 }
 
-export default App;
+
+export default Plp;

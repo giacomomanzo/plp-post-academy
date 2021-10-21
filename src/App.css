@@ -4,36 +4,6 @@
   box-sizing: border-box;
 }
 
-.App {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.header {
-  max-height: 8vh;
-  border: 1px solid black;
-}
-
-.box-logo {
-  width: 10%;
-  background-color: rgb(189, 189, 189);
-}
-
-
-.card-container {
-  width: calc(100% + 16px);
-  padding: 16px;
-  margin: 16px 0 16px 16px;
-}
-
-.card {
-  max-width: 25%;
-}
-
 .footer {
-  max-height: 12vh;
-  width: 100%;
   background-color: rgb(189, 189, 189);
 }
