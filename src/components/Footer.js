@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
-import "../App.css"
+import "../Footer.css"
 
 const Footer = () => {
   return (

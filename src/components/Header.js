@@ -7,11 +7,7 @@ import { Grid } from "@mui/material";
 const Header = ({
   setInStockProducts,
   setOutOfStockProducts,
-  initialValue,
   value,
-  setFilteredProducts,
-  initialProducts,
-  setProducts,
   setValue
 }) => {
   return (
@@ -38,15 +34,13 @@ const Header = ({
         <TextField
           component="form"
           placeholder="search"
-          defaultValue={initialValue}
           value={value}
-          onChange={setFilteredProducts}
+          onChange={(e) => setValue(e.target.value.toLowerCase())}
         ></TextField>
         <Button
           sx={{ height: 53 }}
           variant="contained"
           onClick={() => {
-            setProducts(initialProducts);
             setValue("");
           }}
         >

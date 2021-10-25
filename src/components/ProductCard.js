@@ -2,19 +2,11 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, CardActions, Grid } from "@mui/material";
+import { CardActionArea, CardActions } from "@mui/material";
 
-const CardList = ({ products }) => {
-  return (
-    <Grid
-      container
-      direction="row"
-      gap="30px"
-      p={2.5}
-      minHeight="80vh"
-    >
-      {products.map((item) => (
-        <Card key={item.upc}>
+const ProductCard = ({ product }) => {
+    return(
+        <Card key={product.upc}>
           <CardActionArea>
               <CardMedia
                 component="img"
@@ -24,22 +16,21 @@ const CardList = ({ products }) => {
               />
               <CardContent>
                 <Typography variant="h5" component="p">
-                  {item.name}
+                  {product.name}
                 </Typography>
                 <Typography variant="p" color="black">
-                  {`$ ${item.price.current.value}`}
+                  {`$ ${product.price.current.value}`}
                 </Typography>
               </CardContent>
               <CardActions>
                 <Typography variant="p" color="black">
-                  {`in stock: ${item.availability.stock}`}
+                  {`in stock: ${product.availability.stock}`}
                 </Typography>
               </CardActions>
           </CardActionArea>
         </Card>
-      ))}
-    </Grid>
-  );
-};
+    )
+}
 
-export default CardList;
+
+export default ProductCard;

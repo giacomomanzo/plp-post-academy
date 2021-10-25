@@ -1,9 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  border: none;
   box-sizing: border-box;
 }
 
-.footer {
-  background-color: rgb(189, 189, 189);
-}
+
