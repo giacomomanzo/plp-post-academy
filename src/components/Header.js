@@ -1,7 +1,6 @@
 import Navigation from "./Navigation";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import { Grid } from "@mui/material";
+import Search from "./Search";
 
 const Header = ({
   setInStockProducts,
@@ -26,21 +25,8 @@ const Header = ({
           setOutOfStockProducts={setOutOfStockProducts}
         />
       </Grid>
-      <Grid item xs={4} container justifyContent="flex-end">
-        <TextField
-          component="form"
-          placeholder="search"
-          value={value}
-          onChange={(e) => setValue(e.target.value.toLowerCase())}
-        ></TextField>
-        <Button
-          variant="contained"
-          onClick={() => {
-            setValue("");
-          }}
-        >
-          RESET
-        </Button>
+      <Grid item xs={4}>
+        <Search value={value} setValue={setValue}/>
       </Grid>
     </Grid>
   );

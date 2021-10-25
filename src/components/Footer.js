@@ -5,7 +5,7 @@ import "../Footer.css"
 
 const Footer = () => {
   return (
-    <Grid container justifyContent="flex-end" height="10vh" className="footer">
+    <Grid container justifyContent="flex-end" className="footer" p={2}>
       <ButtonGroup variant="text">
         <Button><a href="https://twitter.com/"  target="_blank"  rel="noreferrer">Twitter</a></Button>
         <Button><a href="https://facebook.com/" target="_blank"  rel="noreferrer">Facebook</a></Button>

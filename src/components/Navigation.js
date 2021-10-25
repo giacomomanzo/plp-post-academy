@@ -2,8 +2,8 @@ import { ButtonGroup, Button } from "@mui/material";
 
 const Navigation = ({inStock, setInStockProducts, setOutOfStockProducts}) => {
     return (
-        <ButtonGroup fullWidth="true">
-          <Button variant={inStock === true ? "contained" : "outlined"} onClick={setInStockProducts}>
+        <ButtonGroup >
+          <Button variant={inStock === true ? "contained" : "outlined"} onClick={setInStockProducts} >
             IN STOCK
           </Button>
           <Button variant={inStock === false ? "contained" : "outlined"}  onClick={setOutOfStockProducts}>
