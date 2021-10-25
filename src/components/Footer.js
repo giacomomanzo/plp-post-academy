@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <Grid container justifyContent="flex-end" height="10vh" className="footer">
       <ButtonGroup variant="text">
-        <Button>Twitter</Button>
-        <Button>Facebook</Button>
+        <Button><a href="https://twitter.com/"  target="_blank"  rel="noreferrer">Twitter</a></Button>
+        <Button><a href="https://facebook.com/" target="_blank"  rel="noreferrer">Facebook</a></Button>
       </ButtonGroup>
     </Grid>
   );

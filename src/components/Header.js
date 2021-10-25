@@ -34,7 +34,6 @@ const Header = ({
           onChange={(e) => setValue(e.target.value.toLowerCase())}
         ></TextField>
         <Button
-          sx={{ height: 53 }}
           variant="contained"
           onClick={() => {
             setValue("");

@@ -1,14 +1,13 @@
-import { Grid } from "@mui/material";
+import "./App.css";
 import Header from "./components/Header";
-import CardList from "./components/CardList";
 import Footer from "./components/Footer";
+import ProductCard from "./components/ProductCard";
 import { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 
 const Plp = () => {
-    let initialValue;
-  const [value, setValue] = useState(initialValue);
-  const [initialProducts, setInitialProducts] = useState([]);
+  const [value, setValue] = useState("");
+  const [inStock, setInStock] = useState(true);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -18,7 +17,6 @@ const Plp = () => {
       )
         .then((res) => res.json())
         .then((res) => {
-          setInitialProducts(res);
           setProducts(res);
         })
         .catch((err) => {
@@ -27,44 +25,42 @@ const Plp = () => {
     };
     loadProducts();
   }, []);
-
-  const setFilteredProducts = (e) => {
-    const searchString = e.target.value.toLowerCase();
-    const filteredProducts = initialProducts.filter((item) => {
-      return item.name.toLowerCase().includes(searchString);
-    });
-    setProducts(filteredProducts);
-    setValue(searchString);
-  };
-
   const setInStockProducts = () => {
-    const InStockProducts = initialProducts.filter((item) => {
-      return item.availability.stock >= 1;
-    });
-    setProducts(InStockProducts);
+    setInStock(true)
   };
   const setOutOfStockProducts = () => {
-    const outOfStockProducts = initialProducts.filter((item) => {
-      return item.availability.stock === 0;
-    });
-    setProducts(outOfStockProducts);
+    setInStock(false)
   };
+
+  const filterProducts = (product) => {
+    return value ? product.name.toLowerCase().includes(value) : true
+  }
     return (
-        <Grid container direction="column" minHeight="100vh">
+      <Grid container direction="column" minHeight="100vh">
       <Grid item xs={12}>
         <Header
           setInStockProducts={setInStockProducts}
           setOutOfStockProducts={setOutOfStockProducts}
-          initialValue={initialValue}
+          inStock={inStock}
           value={value}
-          setFilteredProducts={setFilteredProducts}
-          initialProducts={initialProducts}
-          setProducts={setProducts}
           setValue={setValue}
         />
       </Grid>
-      <Grid item xs={12}>
-        <CardList products={products} />
+      <Grid
+        item
+        xs={12}
+        container
+        direction="row"
+        gap="30px"
+        p={2}
+        minHeight="80vh"
+      >
+        {products
+          .filter(filterProducts)
+          .filter((product) => (inStock ? product.availability.stock > 0 : product.availability.stock === 0))
+          .map((product) => (
+            <ProductCard product={product} />
+          ))}
       </Grid>
       <Grid item xs={12}>
         <Footer />
