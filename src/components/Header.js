@@ -1,5 +1,4 @@
-
-import ButtonGroup from "@mui/material/ButtonGroup";
+import Navigation from "./Navigation";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Grid } from "@mui/material";
@@ -7,30 +6,27 @@ import { Grid } from "@mui/material";
 const Header = ({
   setInStockProducts,
   setOutOfStockProducts,
+  inStock,
   value,
-  setValue
+  setValue,
 }) => {
   return (
-    <Grid
-      container
-      justifyContent="space-between"
-      alignItems="center"
-      borderBottom="solid 1px"
-    >
-      <img
-        component="img"
-        src="https://via.placeholder.com/150x95"
-        alt=""
-      ></img>
-      <ButtonGroup size="small">
-        <Button onClick={setInStockProducts} sx={{ height: 50 }}>
-          IN STOCK
-        </Button>
-        <Button onClick={setOutOfStockProducts} sx={{ height: 50 }}>
-          OUT OF STOCK
-        </Button>
-      </ButtonGroup>
-      <div>
+    <Grid container alignItems="center" borderBottom="solid 1px">
+      <Grid item xs={4}>
+        <img
+          src="https://via.placeholder.com/150x80"
+          alt=""
+          className="img"
+        ></img>
+      </Grid>
+      <Grid item xs={4}>
+        <Navigation
+          inStock={inStock}
+          setInStockProducts={setInStockProducts}
+          setOutOfStockProducts={setOutOfStockProducts}
+        />
+      </Grid>
+      <Grid item xs={4} container justifyContent="flex-end">
         <TextField
           component="form"
           placeholder="search"
@@ -46,7 +42,7 @@ const Header = ({
         >
           RESET
         </Button>
-      </div>
+      </Grid>
     </Grid>
   );
 };

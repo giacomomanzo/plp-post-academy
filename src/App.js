@@ -43,6 +43,7 @@ function App() {
         <Header
           setInStockProducts={setInStockProducts}
           setOutOfStockProducts={setOutOfStockProducts}
+          inStock={inStock}
           value={value}
           setValue={setValue}
         />
@@ -53,7 +54,7 @@ function App() {
         container
         direction="row"
         gap="30px"
-        p={2.5}
+        p={2}
         minHeight="80vh"
       >
         {products
