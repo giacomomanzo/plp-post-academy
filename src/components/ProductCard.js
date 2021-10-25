@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   return (
     <Grid item xs={ 3 } >
-      <Link to={`/${product.UPC}`}>
+      <Link to={`/product/${product.UPC}`}>
         <Card>
             <CardMedia
               component="img"

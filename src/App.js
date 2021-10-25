@@ -27,7 +27,7 @@ function App() {
       <Route path="/" exact>
         <Plp products={products} />
       </Route>
-      <Route path="/:upc">
+      <Route path="/product/:upc">
         <Pdp products={products} />
       </Route>
     </BrowserRouter>
