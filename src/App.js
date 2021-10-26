@@ -24,11 +24,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Route path="/" exact>
-        <Plp products={products} />
-      </Route>
       <Route path="/product/:upc">
         <Pdp products={products} />
+      </Route>
+      <Route path="/plp-post-academy" exact>
+        <Plp products={products} />
       </Route>
     </BrowserRouter>
   );

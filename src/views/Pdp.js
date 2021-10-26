@@ -8,7 +8,7 @@ const Pdp = ({ products }) => {
   return (
     <Grid>
     <ProductCard product={product} />
-    <a href="/">Back</a>
+    <a href="/plp-post-academy">Back</a>
     </Grid>
   )
 }
