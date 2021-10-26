@@ -5,22 +5,26 @@ import ProductCard from "../components/ProductCard";
 import { useState } from "react";
 import { Grid } from "@mui/material";
 
-const Plp = ({products}) => {
+const Plp = ({ products }) => {
   const [value, setValue] = useState("");
   const [inStock, setInStock] = useState(true);
 
   const setInStockProducts = () => {
-    setInStock(true)
+    setInStock(true);
   };
   const setOutOfStockProducts = () => {
-    setInStock(false)
+    setInStock(false);
   };
 
   const filterProducts = (product) => {
-    return value ? product.name.toLowerCase().includes(value) : true
-  }
-    return (
-      <Grid container minHeight="100vh" direction="column" >
+    if (value) {
+      return product.name.toLowerCase().includes(value);
+    } else {
+      return true;
+    }
+  };
+  return (
+    <Grid container minHeight="100vh" direction="column">
       <Grid item xs={12}>
         <Header
           setInStockProducts={setInStockProducts}
@@ -41,17 +45,20 @@ const Plp = ({products}) => {
       >
         {products
           .filter(filterProducts)
-          .filter((product) => (inStock ? product.availability.stock > 0 : product.availability.stock === 0))
+          .filter((product) =>
+            inStock
+              ? product.availability.stock > 0
+              : product.availability.stock === 0
+          )
           .map((product) => (
-            <ProductCard product={product} key={product.UPC}/>
+            <ProductCard product={product} key={product.UPC} />
           ))}
       </Grid>
       <Grid item xs={12}>
         <Footer />
       </Grid>
     </Grid>
-    )
-}
-
+  );
+};
 
 export default Plp;
