@@ -15,14 +15,7 @@ const Plp = ({ products }) => {
   const setOutOfStockProducts = () => {
     setInStock(false);
   };
-
-  const filterProducts = (product) => {
-    if (value) {
-      return product.name.toLowerCase().includes(value);
-    } else {
-      return true;
-    }
-  };
+  
   return (
     <Grid container minHeight="100vh" direction="column">
       <Grid item xs={12}>
@@ -44,7 +37,7 @@ const Plp = ({ products }) => {
         padding={2}
       >
         {products
-          .filter(filterProducts)
+          .filter(product => product.name.toLowerCase().includes(value))
           .filter((product) =>
             inStock
               ? product.availability.stock > 0
