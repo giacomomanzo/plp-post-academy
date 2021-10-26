@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/plp-post-academy/static/css/main.e3de72e7.chunk.css",
-    "main.js": "/plp-post-academy/static/js/main.d2cad302.chunk.js",
-    "main.js.map": "/plp-post-academy/static/js/main.d2cad302.chunk.js.map",
+    "main.js": "/plp-post-academy/static/js/main.fdb90d3f.chunk.js",
+    "main.js.map": "/plp-post-academy/static/js/main.fdb90d3f.chunk.js.map",
     "runtime-main.js": "/plp-post-academy/static/js/runtime-main.081fab41.js",
     "runtime-main.js.map": "/plp-post-academy/static/js/runtime-main.081fab41.js.map",
     "static/js/2.e8247f2f.chunk.js": "/plp-post-academy/static/js/2.e8247f2f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.081fab41.js",
     "static/js/2.e8247f2f.chunk.js",
     "static/css/main.e3de72e7.chunk.css",
-    "static/js/main.d2cad302.chunk.js"
+    "static/js/main.fdb90d3f.chunk.js"
   ]
 }
