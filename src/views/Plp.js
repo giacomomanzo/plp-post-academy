@@ -40,7 +40,7 @@ const Plp = ({ products }) => {
         xs={12}
         spacing={2}
         direction="row"
-        flex={1}
+        minHeight="83vh"
         padding={2}
       >
         {products
