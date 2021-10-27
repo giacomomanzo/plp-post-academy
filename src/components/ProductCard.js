@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
               <Typography color="black">
                 {`$ ${product.price.current.value}`}
               </Typography>
-              <Typography color="black" className="stock-btn" component="div">
+              <Typography color="black" className="stock-btn" fontSize="12px" component="div">
                 {product.availability.stock > 0 ? "In Stock" : "Out of Stock"}
               </Typography>
             </CardContent>

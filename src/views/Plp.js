@@ -10,24 +10,11 @@ const Plp = ({ products }) => {
   const [inStock, setInStock] = useState(undefined);
 
   const setInStockProducts = () => {
-    switch(inStock) {
-      case (undefined) :
-      setInStock(true)
-      break;
-      default :
-      setInStock(undefined)
-    } 
+    setInStock(inStock === undefined ? true : undefined);
   };
   const setOutOfStockProducts = () => {
-    switch(inStock) {
-      case (undefined) :
-      setInStock(false)
-      break;
-      default :
-      setInStock(undefined)
-    } 
+    setInStock(inStock === undefined ? false : undefined);
   };
-  console.log(inStock)
   
   return (
     <Grid container minHeight="100vh" direction="column">
