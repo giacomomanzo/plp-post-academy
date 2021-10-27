@@ -11,12 +11,12 @@
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: unset;
 }
 
 
 .stock-btn {
-  background-color: rgb(207, 207, 207);
+  background-color: rgb(212, 209, 209);
   border-radius: 10px;
   padding: 3px;
   width: fit-content;
