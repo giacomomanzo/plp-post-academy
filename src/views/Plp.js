@@ -7,14 +7,27 @@ import { Grid } from "@mui/material";
 
 const Plp = ({ products }) => {
   const [value, setValue] = useState("");
-  const [inStock, setInStock] = useState(true);
+  const [inStock, setInStock] = useState(undefined);
 
   const setInStockProducts = () => {
-    setInStock(true);
+    switch(inStock) {
+      case (undefined) :
+      setInStock(true)
+      break;
+      default :
+      setInStock(undefined)
+    } 
   };
   const setOutOfStockProducts = () => {
-    setInStock(false);
+    switch(inStock) {
+      case (undefined) :
+      setInStock(false)
+      break;
+      default :
+      setInStock(undefined)
+    } 
   };
+  console.log(inStock)
   
   return (
     <Grid container minHeight="100vh" direction="column">
@@ -39,7 +52,7 @@ const Plp = ({ products }) => {
         {products
           .filter(product => product.name.toLowerCase().includes(value))
           .filter((product) =>
-            inStock
+            inStock === undefined ? true : inStock
               ? product.availability.stock > 0
               : product.availability.stock === 0
           )
