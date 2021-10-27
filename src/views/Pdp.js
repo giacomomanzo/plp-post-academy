@@ -8,7 +8,6 @@ const Pdp = ({ products }) => {
   return (
     <Grid>
     <ProductCard product={product} />
-    <a href="/">Back</a>
     </Grid>
   )
 }
