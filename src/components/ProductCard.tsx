@@ -11,7 +11,6 @@ type Props = {
 }
 
 const ProductCard: React.FC<Props> = ({ product }) => {
-  const {name, price, availability} = product
   return (
     <Grid item xs={ 3 } >
       <Link to={`/product/${product.UPC}`}>
@@ -23,13 +22,13 @@ const ProductCard: React.FC<Props> = ({ product }) => {
             />
             <CardContent>
               <Typography variant="h5" component="div">
-                {name}
+                {product.name}
               </Typography>
               <Typography color="black">
-                {`$ ${price.current.value}`}
+                {`$ ${product.price.current.value}`}
               </Typography>
               <Typography color="black" className="stock-btn" fontSize="12px" component="div">
-                {availability.stock > 0 ? "In Stock" : "Out of Stock"}
+                {product.availability.stock > 0 ? "In Stock" : "Out of Stock"}
               </Typography>
             </CardContent>
         </Card>
