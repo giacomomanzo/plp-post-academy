@@ -11,12 +11,16 @@ type Props = {
 const Pdp: React.FC<Props> = ({ products }) => {
   const { upc } = useParams<{ upc: string }>();
   const product = products.find((product) => product.UPC === upc);
+
+  if(product === undefined) {
+    return null
+  }
   
-  return product ? (
+  return  (
     <Grid>
     <ProductCard product={product} />
     </Grid>
-  ) : null
+  )
 }
 
 export default Pdp;
