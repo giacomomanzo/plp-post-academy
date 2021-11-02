@@ -2,7 +2,12 @@ import { Grid } from "@mui/material";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
-const Search = ({ value, setValue }) => {
+type Props = {
+  value: string
+  setValue: (value: string) => void
+}
+
+const Search: React.FC<Props> = ({ value, setValue }) => {
   return (
     <Grid container alignItems="center" >
       <Grid item xs={8} paddingRight={2}>

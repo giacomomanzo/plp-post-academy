@@ -1,15 +1,22 @@
 import { Grid } from "@mui/material";
 import { useParams } from "react-router";
 import ProductCard from "../components/ProductCard";
+import { Product } from "../model/Product"
 
-const Pdp = ({ products }) => {
-  const { upc } = useParams();
+type Props = {
+  products: Product[]
+}
+
+
+const Pdp: React.FC<Props> = ({ products }) => {
+  const { upc } = useParams<{ upc: string }>();
   const product = products.find((product) => product.UPC === upc);
-  return (
+  
+  return product ? (
     <Grid>
     <ProductCard product={product} />
     </Grid>
-  )
+  ) : null
 }
 
 export default Pdp;

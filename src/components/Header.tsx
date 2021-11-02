@@ -2,7 +2,15 @@ import Navigation from "./Navigation";
 import { Grid } from "@mui/material";
 import Search from "./Search";
 
-const Header = ({
+type Props = {
+  setInStockProducts: () => void
+  setOutOfStockProducts: () => void
+  inStock?: boolean
+  value: string
+  setValue: (value: string) => void
+}
+
+const Header: React.FC<Props> = ({
   setInStockProducts,
   setOutOfStockProducts,
   inStock,

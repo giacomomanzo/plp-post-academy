@@ -2,9 +2,10 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Plp from "./views/Plp";
 import Pdp from "./views/Pdp";
 import { useState, useEffect } from "react";
+import { Product } from "./model/Product";
 
 function App() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const loadProducts = () => {

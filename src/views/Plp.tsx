@@ -4,10 +4,15 @@ import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 import { useState } from "react";
 import { Grid } from "@mui/material";
+import { Product } from "../model/Product"
 
-const Plp = ({ products }) => {
+type Props = {
+  products : Product[]
+}
+
+const Plp: React.FC<Props> = ({ products }) => {
   const [value, setValue] = useState("");
-  const [inStock, setInStock] = useState(undefined);
+  const [inStock, setInStock] = useState<boolean | undefined>(undefined);
 
   const setInStockProducts = () => {
     setInStock(inStock === undefined ? true : undefined);

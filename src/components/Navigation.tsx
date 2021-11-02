@@ -1,6 +1,12 @@
 import { ButtonGroup, Button } from "@mui/material";
 
-const Navigation = ({inStock, setInStockProducts, setOutOfStockProducts}) => {
+type Props = {
+  setInStockProducts: () => void
+  setOutOfStockProducts: () => void
+  inStock?: boolean
+}
+
+const Navigation: React.FC<Props> = ({inStock, setInStockProducts, setOutOfStockProducts}) => {
     return (
         <ButtonGroup >
           <Button variant={inStock === true ? "contained" : "outlined"} onClick={setInStockProducts} >

@@ -4,8 +4,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
+import { Product } from "../model/Product"
 
-const ProductCard = ({ product }) => {
+type Props = {
+  product: Product
+}
+
+const ProductCard: React.FC<Props> = ({ product }) => {
+  const {name, price, availability} = product
   return (
     <Grid item xs={ 3 } >
       <Link to={`/product/${product.UPC}`}>
@@ -17,13 +23,13 @@ const ProductCard = ({ product }) => {
             />
             <CardContent>
               <Typography variant="h5" component="div">
-                {product.name}
+                {name}
               </Typography>
               <Typography color="black">
-                {`$ ${product.price.current.value}`}
+                {`$ ${price.current.value}`}
               </Typography>
               <Typography color="black" className="stock-btn" fontSize="12px" component="div">
-                {product.availability.stock > 0 ? "In Stock" : "Out of Stock"}
+                {availability.stock > 0 ? "In Stock" : "Out of Stock"}
               </Typography>
             </CardContent>
         </Card>
