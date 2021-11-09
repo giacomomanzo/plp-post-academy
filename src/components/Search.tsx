@@ -28,7 +28,6 @@ const Label = styled.label`
   padding-right: 4px;
   opacity: 0.75;
   order: 1;
-  /*outline: 0;*/
   pointer-events: none;
   text-shadow: none;
   transform-origin: left top;
