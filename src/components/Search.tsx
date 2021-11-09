@@ -70,7 +70,6 @@ const StyledSearchButton = styled.button`
   background-color: #1976d2;
   color: white;
   border-radius: 5px;
-  overflow: hidden;
   margin-left: 20px;
 `;
 
