@@ -34,6 +34,7 @@ const StyledButtonLeft = styled.button`
 
   &:hover {
     background-color: rgba(173, 204, 240, 0.226);
+    transition: 1s;
   }
 
 `;
@@ -59,6 +60,7 @@ const StyledButtonRight = styled.button`
 
   &:hover {
     background-color: rgba(173, 204, 240, 0.226);
+    transition: 1s;
   }
 
 `;
