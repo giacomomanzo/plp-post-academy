@@ -36,7 +36,7 @@ const StockChip = styled.div`
   background-color: rgb(228, 228, 228);
   border-radius: 20px;
   padding: 7px;
-  width: 18%;
+  width: fit-content;
   text-align: center;
   font-size:12px;
   margin: 10px;

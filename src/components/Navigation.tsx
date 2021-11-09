@@ -38,7 +38,7 @@ const StyledButtonLeft = styled.button`
 
 `;
 const StyledButtonRight = styled.button`
-  width: fit-content;
+  width: max-content;
   border: 1px solid rgb(21, 101, 192);
   padding: 10px;
   background-color: white;
