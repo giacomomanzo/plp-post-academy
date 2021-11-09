@@ -24,6 +24,8 @@ const Label = styled.label`
   color: gray;
   font-weight: normal;
   width: fit-content;
+  padding-left: 4px;
+  padding-right: 4px;
   opacity: 0.75;
   order: 1;
   /*outline: 0;*/
