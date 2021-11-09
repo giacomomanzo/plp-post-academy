@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import { useParams } from "react-router";
 import ProductCard from "../components/ProductCard";
 import { Product } from "../model/Product"
@@ -17,9 +16,9 @@ const Pdp: React.FC<Props> = ({ products }) => {
   }
   
   return  (
-    <Grid>
+    <div className="pdp-cont">
     <ProductCard product={product} />
-    </Grid>
+    </div>
   )
 }
 

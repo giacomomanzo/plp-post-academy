@@ -1,16 +1,43 @@
-import { Grid } from "@mui/material";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import Button from "@mui/material/Button";
-import "../Footer.css"
+import styled from "styled-components";
+
+const FooterContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(189, 189, 189);
+  width: 100%;
+  min-height: 8vh;
+`;
+
+const ButtonGroup = styled.div`
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-self: center;
+  color: #1976d2;
+`
+
+const Link = styled.button`
+  background-color: unset;
+  color: rgb(21, 101, 192);
+`
 
 const Footer = () => {
   return (
-    <Grid container justifyContent="flex-end" className="footer" p={2} minHeight="10vh">
-      <ButtonGroup variant="text">
-        <Button><a href="https://twitter.com/"  target="_blank"  rel="noreferrer">Twitter</a></Button>
-        <Button><a href="https://facebook.com/" target="_blank"  rel="noreferrer">Facebook</a></Button>
+    <FooterContainer>
+      <ButtonGroup>
+        <Link className="footer-link-container-t">
+          <a href="https://twitter.com/" target="_blank" rel="noreferrer">
+            TWITTER
+          </a>
+        </Link>
+        <Link className="footer-link-container-f">
+          <a href="https://facebook.com/" target="_blank" rel="noreferrer">
+            FACEBOOK
+          </a>
+        </Link>
       </ButtonGroup>
-    </Grid>
+    </FooterContainer>
   );
 };
 

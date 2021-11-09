@@ -1,6 +1,6 @@
 import Navigation from "./Navigation";
-import { Grid } from "@mui/material";
 import Search from "./Search";
+import styled from "styled-components";
 
 type Props = {
   setInStockProducts: () => void
@@ -10,6 +10,13 @@ type Props = {
   setValue: (value: string) => void
 }
 
+const StyledHeader = styled.div`
+  width: 100%;
+  border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+`;
+
 const Header: React.FC<Props> = ({
   setInStockProducts,
   setOutOfStockProducts,
@@ -18,26 +25,22 @@ const Header: React.FC<Props> = ({
   setValue,
 }) => {
   return (
-    <Grid container alignItems="center" borderBottom="solid 1px">
-      <Grid item xs={4}>
+    <StyledHeader>
         <img
           src="https://via.placeholder.com/150x80"
           alt=""
           className="img"
         ></img>
-      </Grid>
-      <Grid item xs={4}>
         <Navigation
           inStock={inStock}
           setInStockProducts={setInStockProducts}
           setOutOfStockProducts={setOutOfStockProducts}
         />
-      </Grid>
-      <Grid item xs={4}>
         <Search value={value} setValue={setValue}/>
-      </Grid>
-    </Grid>
+    </StyledHeader>
   );
 };
+
+
 
 export default Header;

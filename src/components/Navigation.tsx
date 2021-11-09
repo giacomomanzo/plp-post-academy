@@ -1,4 +1,5 @@
-import { ButtonGroup, Button } from "@mui/material";
+import styled from "styled-components";
+import { Button } from "@mui/material";
 
 type Props = {
   setInStockProducts: () => void
@@ -6,16 +7,36 @@ type Props = {
   inStock?: boolean
 }
 
+const StyledButtonGroup = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+`;
+const StyledButton = styled(Button)`
+    width: fit-content;
+
+    :first-of-type {
+      border-style: solid;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    :last-of-type {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    `;
+
 const Navigation: React.FC<Props> = ({inStock, setInStockProducts, setOutOfStockProducts}) => {
     return (
-        <ButtonGroup >
-          <Button variant={inStock === true ? "contained" : "outlined"} onClick={setInStockProducts} >
-            IN STOCK
-          </Button>
-          <Button variant={inStock === false ? "contained" : "outlined"}  onClick={setOutOfStockProducts}>
+        <StyledButtonGroup >
+          <StyledButton variant={inStock === true ? "contained" : "outlined"} onClick={setInStockProducts} >
+          IN STOCK
+          </StyledButton>
+          <StyledButton variant={inStock === false ? "contained" : "outlined"}  onClick={setOutOfStockProducts}>
             OUT OF STOCK
-          </Button>
-        </ButtonGroup>
+          </StyledButton>
+        </StyledButtonGroup>
     )
 }
 
