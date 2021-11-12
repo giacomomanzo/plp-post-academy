@@ -1,11 +1,7 @@
 import styled from "styled-components";
 import Ripples from "react-ripples";
-
-type Props = {
-  setInStockProducts: () => void;
-  setOutOfStockProducts: () => void;
-  inStock?: boolean;
-};
+import { useAppDispatch, useAppSelector } from "../store/hook";
+import { setFilter } from "../store/filterSlice";
 
 const StyledButtonGroup = styled.div`
   height: 100%;
@@ -65,25 +61,23 @@ const StyledButtonRight = styled.button`
 
 `;
 
-const Navigation: React.FC<Props> = ({
-  inStock,
-  setInStockProducts,
-  setOutOfStockProducts,
-}) => {
+const Navigation = () => {
+  const filter = useAppSelector((state) => state.filter.value)
+  const dispatch = useAppDispatch()
   return (
     <StyledButtonGroup>
       <Ripples color="white" during={500}>
         <StyledButtonLeft
-          className={inStock === true ? "active" : undefined}
-          onClick={setInStockProducts}
+          className={filter === true ? "active" : undefined}
+          onClick={() => {dispatch(setFilter(filter === undefined ? true : undefined))}}
         >
           IN STOCK
         </StyledButtonLeft>
       </Ripples>
       <Ripples color="white" during={500}>
         <StyledButtonRight
-          className={inStock === false ? "active" : undefined}
-          onClick={setOutOfStockProducts}
+          className={filter === false ? "active" : undefined}
+          onClick={() => {dispatch(setFilter(filter === undefined ? false : undefined))}}
         >
           OUT OF STOCK
         </StyledButtonRight>

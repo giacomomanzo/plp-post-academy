@@ -2,9 +2,9 @@ import "../App.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
-import { useState } from "react";
 import { Product } from "../model/Product";
 import styled from "styled-components";
+import { useAppSelector } from "../store/hook";
 
 type Props = {
   products: Product[];
@@ -26,32 +26,19 @@ const CardsContainer = styled.div`
 `;
 
 const Plp: React.FC<Props> = ({ products }) => {
-  const [value, setValue] = useState("");
-  const [inStock, setInStock] = useState<boolean | undefined>(undefined);
-
-  const setInStockProducts = () => {
-    setInStock(inStock === undefined ? true : undefined);
-  };
-  const setOutOfStockProducts = () => {
-    setInStock(inStock === undefined ? false : undefined);
-  };
+  const searchTerm = useAppSelector((state) => state.searchTerm.value)
+  const filter = useAppSelector((state) => state.filter.value)
 
   return (
     <Container>
-      <Header
-        setInStockProducts={setInStockProducts}
-        setOutOfStockProducts={setOutOfStockProducts}
-        inStock={inStock}
-        value={value}
-        setValue={setValue}
-      />
+      <Header />
       <CardsContainer>
         {products
-          .filter((product) => product.name.toLowerCase().includes(value))
+          .filter((product) => product.name.toLowerCase().includes(searchTerm))
           .filter((product) =>
-            inStock === undefined
+            filter === undefined
               ? true
-              : inStock
+              : filter
               ? product.availability.stock > 0
               : product.availability.stock === 0
           )

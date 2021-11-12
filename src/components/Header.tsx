@@ -2,13 +2,6 @@ import Navigation from "./Navigation";
 import Search from "./Search";
 import styled from "styled-components";
 
-type Props = {
-  setInStockProducts: () => void
-  setOutOfStockProducts: () => void
-  inStock?: boolean
-  value: string
-  setValue: (value: string) => void
-}
 
 const StyledHeader = styled.div`
   width: 100%;
@@ -17,13 +10,7 @@ const StyledHeader = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
 `;
 
-const Header: React.FC<Props> = ({
-  setInStockProducts,
-  setOutOfStockProducts,
-  inStock,
-  value,
-  setValue,
-}) => {
+const Header = () => {
   return (
     <StyledHeader>
         <img
@@ -31,12 +18,8 @@ const Header: React.FC<Props> = ({
           alt=""
           className="img"
         ></img>
-        <Navigation
-          inStock={inStock}
-          setInStockProducts={setInStockProducts}
-          setOutOfStockProducts={setOutOfStockProducts}
-        />
-        <Search value={value} setValue={setValue}/>
+        <Navigation />
+        <Search />
     </StyledHeader>
   );
 };
