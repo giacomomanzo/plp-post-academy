@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Ripples from "react-ripples";
 import { useAppDispatch, useAppSelector } from "../store/hook";
-import { setValue } from "../store/searchTermSlice";
+import { setValue } from "../features/search/searchTermSlice";
 
 const Container = styled.div`
   height: 100%;

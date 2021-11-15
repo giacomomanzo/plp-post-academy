@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
-import searchTermSlice from './searchTermSlice'
-import filterSlice from './filterSlice'
+import searchTermSlice from '../features/search/searchTermSlice'
+import filterSlice from '../features/search/filter/filterSlice'
 
 
 const store = configureStore({

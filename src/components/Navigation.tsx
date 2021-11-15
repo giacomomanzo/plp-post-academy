@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Ripples from "react-ripples";
 import { useAppDispatch, useAppSelector } from "../store/hook";
-import { setFilter } from "../store/filterSlice";
+import { setFilter } from "../features/search/filter/filterSlice";
 
 const StyledButtonGroup = styled.div`
   height: 100%;
