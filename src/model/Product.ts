@@ -10,4 +10,6 @@ export type Product = {
   availability: {
     stock: number;
   };
+  imageUrl: string;
+  variants: Omit<Product, "variants">[];
 };

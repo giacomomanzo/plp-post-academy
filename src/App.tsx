@@ -22,6 +22,19 @@ function App() {
     };
     loadProducts();
   }, []);
+  
+  products.map(
+    (product) =>
+      (product.imageUrl = `https://picsum.photos/600/400?random=${product.UPC}`)
+  );
+  products.map((product) =>
+    product.variants.map(
+      (variant) =>
+        (variant.imageUrl = `https://picsum.photos/600/400?random=${variant.UPC}`)
+    )
+  );
+
+  console.log(products);
 
   return (
     <BrowserRouter>

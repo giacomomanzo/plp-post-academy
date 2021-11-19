@@ -16,16 +16,16 @@ a {
 }
 
 .pdp-cont {
-  height: 30%;
-  width: 25%;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
 
 .search-button:hover {
   background-color: rgb(21, 101, 192);
   transition: 500ms;
 }
-
 
 .footer-link-container-t {
   border-right: 1px solid rgb(21, 101, 192);
@@ -33,22 +33,45 @@ a {
   min-height: 5vh;
 }
 
-
 .footer-link-container-f {
   height: 5vh;
 }
-
 
 .price {
   margin-left: 10px;
 }
 
+.img-pdp {
+  padding-left: 25px;
+}
+
+.active-pdp-nav {
+  border-bottom: 4px solid black;
+}
+
+.product-name {
+  font-size: 20px;
+}
+
+.product-price {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.available-txt {
+  font-size: 20px;
+  font-weight: bolder;
+}
 
 
-
-
-
-
-
-
-
+.swiper-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
