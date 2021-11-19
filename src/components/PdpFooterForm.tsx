@@ -10,7 +10,7 @@ const StyledPdpForm = styled.form`
 `;
 
 const StyledPdpFootInput = styled.input`
-  height: 3.5vh;
+  height: 4vh;
   width: 15%;
 `;
 

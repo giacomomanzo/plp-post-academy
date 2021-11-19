@@ -29,7 +29,6 @@ const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "img details";
-  padding-bottom: 2rem;
 `;
 
 const ImgContainer = styled.div`
